@@ -1,0 +1,34 @@
+[2022-06-18 08:13:07,046] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: simple_etl_dag.run_tables_exists_task manual__2022-06-18T08:12:48.330665+00:00 [queued]>
+[2022-06-18 08:13:07,100] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: simple_etl_dag.run_tables_exists_task manual__2022-06-18T08:12:48.330665+00:00 [queued]>
+[2022-06-18 08:13:07,102] {taskinstance.py:1238} INFO - 
+--------------------------------------------------------------------------------
+[2022-06-18 08:13:07,103] {taskinstance.py:1239} INFO - Starting attempt 1 of 1
+[2022-06-18 08:13:07,105] {taskinstance.py:1240} INFO - 
+--------------------------------------------------------------------------------
+[2022-06-18 08:13:07,162] {taskinstance.py:1259} INFO - Executing <Task(PythonOperator): run_tables_exists_task> on 2022-06-18 08:12:48.330665+00:00
+[2022-06-18 08:13:07,173] {standard_task_runner.py:52} INFO - Started process 3299 to run task
+[2022-06-18 08:13:07,190] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'simple_etl_dag', 'run_tables_exists_task', 'manual__2022-06-18T08:12:48.330665+00:00', '--job-id', '8', '--raw', '--subdir', 'DAGS_FOLDER/simple_etl.py', '--cfg-path', '/tmp/tmpn2wawip_', '--error-file', '/tmp/tmptog2bz3w']
+[2022-06-18 08:13:07,194] {standard_task_runner.py:77} INFO - Job 8: Subtask run_tables_exists_task
+[2022-06-18 08:13:07,412] {logging_mixin.py:109} INFO - Running <TaskInstance: simple_etl_dag.run_tables_exists_task manual__2022-06-18T08:12:48.330665+00:00 [running]> on host b7a0af5ee6a4
+[2022-06-18 08:13:07,711] {taskinstance.py:1426} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=Airflow
+AIRFLOW_CTX_DAG_ID=simple_etl_dag
+AIRFLOW_CTX_TASK_ID=run_tables_exists_task
+AIRFLOW_CTX_EXECUTION_DATE=2022-06-18T08:12:48.330665+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-06-18T08:12:48.330665+00:00
+[2022-06-18 08:13:07,718] {logging_mixin.py:109} INFO - >>> Running 'tables_exists' function. Logged at 2022-06-18 08:13:07.717895+00:00
+[2022-06-18 08:13:07,721] {logging_mixin.py:109} INFO - >>> Running 'connect_db' function. Logged at 2022-06-18 08:13:07.720730+00:00
+[2022-06-18 08:13:07,723] {logging_mixin.py:109} INFO - Connecting to DB
+[2022-06-18 08:13:07,746] {logging_mixin.py:109} INFO - >>> Function: 'connect_db' executed. Logged at 2022-06-18 08:13:07.720730+00:00
+[2022-06-18 08:13:07,752] {logging_mixin.py:109} INFO - Checking if tables exists
+[2022-06-18 08:13:07,755] {logging_mixin.py:109} INFO - >>> Running 'check_table_exists' function. Logged at 2022-06-18 08:13:07.754873+00:00
+[2022-06-18 08:13:07,767] {logging_mixin.py:109} INFO - 'raw_wine_quality_dataset' exists in the DB!
+[2022-06-18 08:13:07,770] {logging_mixin.py:109} INFO - >>> Function: 'check_table_exists' executed. Logged at 2022-06-18 08:13:07.754873+00:00
+[2022-06-18 08:13:07,772] {logging_mixin.py:109} INFO - >>> Running 'check_table_exists' function. Logged at 2022-06-18 08:13:07.771916+00:00
+[2022-06-18 08:13:07,780] {logging_mixin.py:109} INFO - 'clean_wine_quality_dataset' exists in the DB!
+[2022-06-18 08:13:07,783] {logging_mixin.py:109} INFO - >>> Function: 'check_table_exists' executed. Logged at 2022-06-18 08:13:07.771916+00:00
+[2022-06-18 08:13:07,789] {logging_mixin.py:109} INFO - >>> Function: 'tables_exists' executed. Logged at 2022-06-18 08:13:07.717895+00:00
+[2022-06-18 08:13:07,791] {python.py:175} INFO - Done. Returned value was: None
+[2022-06-18 08:13:07,845] {taskinstance.py:1277} INFO - Marking task as SUCCESS. dag_id=simple_etl_dag, task_id=run_tables_exists_task, execution_date=20220618T081248, start_date=20220618T081307, end_date=20220618T081307
+[2022-06-18 08:13:07,926] {local_task_job.py:154} INFO - Task exited with return code 0
+[2022-06-18 08:13:08,033] {local_task_job.py:264} INFO - 0 downstream tasks scheduled from follow-on schedule check

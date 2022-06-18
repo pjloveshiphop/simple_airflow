@@ -1,0 +1,39 @@
+[2022-06-18 07:58:05,216] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: simple_etl_dag.run_etl_task manual__2022-06-18T07:57:54.452230+00:00 [queued]>
+[2022-06-18 07:58:05,270] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: simple_etl_dag.run_etl_task manual__2022-06-18T07:57:54.452230+00:00 [queued]>
+[2022-06-18 07:58:05,272] {taskinstance.py:1238} INFO - 
+--------------------------------------------------------------------------------
+[2022-06-18 07:58:05,274] {taskinstance.py:1239} INFO - Starting attempt 1 of 1
+[2022-06-18 07:58:05,275] {taskinstance.py:1240} INFO - 
+--------------------------------------------------------------------------------
+[2022-06-18 07:58:05,342] {taskinstance.py:1259} INFO - Executing <Task(PythonOperator): run_etl_task> on 2022-06-18 07:57:54.452230+00:00
+[2022-06-18 07:58:05,354] {standard_task_runner.py:52} INFO - Started process 2553 to run task
+[2022-06-18 07:58:05,370] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'simple_etl_dag', 'run_etl_task', 'manual__2022-06-18T07:57:54.452230+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/simple_etl.py', '--cfg-path', '/tmp/tmpeeb0m1fw', '--error-file', '/tmp/tmpksk1y_yr']
+[2022-06-18 07:58:05,374] {standard_task_runner.py:77} INFO - Job 2: Subtask run_etl_task
+[2022-06-18 07:58:05,579] {logging_mixin.py:109} INFO - Running <TaskInstance: simple_etl_dag.run_etl_task manual__2022-06-18T07:57:54.452230+00:00 [running]> on host b7a0af5ee6a4
+[2022-06-18 07:58:06,143] {taskinstance.py:1426} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=Airflow
+AIRFLOW_CTX_DAG_ID=simple_etl_dag
+AIRFLOW_CTX_TASK_ID=run_etl_task
+AIRFLOW_CTX_EXECUTION_DATE=2022-06-18T07:57:54.452230+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-06-18T07:57:54.452230+00:00
+[2022-06-18 07:58:06,156] {logging_mixin.py:109} INFO - >>> Running 'etl' function. Logged at 2022-06-18 07:58:06.155486+00:00
+[2022-06-18 07:58:06,160] {logging_mixin.py:109} INFO - >>> Running 'connect_db' function. Logged at 2022-06-18 07:58:06.160244+00:00
+[2022-06-18 07:58:06,165] {logging_mixin.py:109} INFO - Connecting to DB
+[2022-06-18 07:58:06,326] {logging_mixin.py:109} INFO - >>> Function: 'connect_db' executed. Logged at 2022-06-18 07:58:06.160244+00:00
+[2022-06-18 07:58:06,331] {logging_mixin.py:109} INFO - >>> Running 'extract' function. Logged at 2022-06-18 07:58:06.330107+00:00
+[2022-06-18 07:58:06,339] {logging_mixin.py:109} INFO - Reading dataset from https://gist.githubusercontent.com/mmphego/5b6fc4d6dc3c8fba4fce9d994a2fe16b/raw/ab5df0e76812e13df5b31e466a5fb787fac0599a/wine_quality.csv
+[2022-06-18 07:58:09,071] {logging_mixin.py:109} INFO - >>> Function: 'extract' executed. Logged at 2022-06-18 07:58:06.330107+00:00
+[2022-06-18 07:58:09,093] {logging_mixin.py:109} INFO - >>> Running 'transform' function. Logged at 2022-06-18 07:58:09.092585+00:00
+[2022-06-18 07:58:09,116] {logging_mixin.py:109} INFO - Transforming data
+[2022-06-18 07:58:09,569] {logging_mixin.py:109} INFO - >>> Function: 'transform' executed. Logged at 2022-06-18 07:58:09.092585+00:00
+[2022-06-18 07:58:09,575] {logging_mixin.py:109} INFO - >>> Running 'load_to_db' function. Logged at 2022-06-18 07:58:09.574412+00:00
+[2022-06-18 07:58:09,582] {logging_mixin.py:109} INFO - Loading dataframe to DB on table: raw_wine_quality_dataset
+[2022-06-18 07:58:16,014] {logging_mixin.py:109} INFO - >>> Function: 'load_to_db' executed. Logged at 2022-06-18 07:58:09.574412+00:00
+[2022-06-18 07:58:16,019] {logging_mixin.py:109} INFO - >>> Running 'load_to_db' function. Logged at 2022-06-18 07:58:16.019337+00:00
+[2022-06-18 07:58:16,021] {logging_mixin.py:109} INFO - Loading dataframe to DB on table: clean_wine_quality_dataset
+[2022-06-18 07:58:20,944] {logging_mixin.py:109} INFO - >>> Function: 'load_to_db' executed. Logged at 2022-06-18 07:58:16.019337+00:00
+[2022-06-18 07:58:20,947] {logging_mixin.py:109} INFO - >>> Function: 'etl' executed. Logged at 2022-06-18 07:58:06.155486+00:00
+[2022-06-18 07:58:20,949] {python.py:175} INFO - Done. Returned value was: None
+[2022-06-18 07:58:20,998] {taskinstance.py:1277} INFO - Marking task as SUCCESS. dag_id=simple_etl_dag, task_id=run_etl_task, execution_date=20220618T075754, start_date=20220618T075805, end_date=20220618T075820
+[2022-06-18 07:58:21,152] {local_task_job.py:154} INFO - Task exited with return code 0
+[2022-06-18 07:58:21,284] {local_task_job.py:264} INFO - 1 downstream tasks scheduled from follow-on schedule check
